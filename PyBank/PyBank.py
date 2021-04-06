@@ -62,18 +62,3 @@ average_change =sum (change_prof_loss)/len(change_prof_loss)
     close = analysis.txt
 
 
-
-
-
-
-
-
-
-
-
-        
-
-
-
-
-
