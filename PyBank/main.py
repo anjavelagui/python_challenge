@@ -31,10 +31,10 @@ with open('csvpath' , 'r') as csvfile:
     total_net_losses = total_net_losses + int(row[1])
 
 #Calculate the Total
-total_amount = total_net_profit - total_net_losses
+    total_amount = total_net_profit - total_net_losses
 
 #Calculate average of change
-average_change =sum (change_prof_loss)/len(change_prof_loss)
+    average_change =sum (change_prof_loss)/len(change_prof_loss)
 
 #Calculate greater increase - decrease- date and amount
     greatest_increase = max(change_prof_loss)
@@ -60,20 +60,3 @@ average_change =sum (change_prof_loss)/len(change_prof_loss)
         write("Greatest Increase In Profits: " + int(greatest_increase) "\n")
         write("Greatest Decrease In Profits: " + int(greatest_decrease)) "\n")
     close = analysis.txt
-
-
-
-
-
-
-
-
-
-
-
-        
-
-
-
-
-
