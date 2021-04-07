@@ -2,23 +2,22 @@
 import os
 import csv
 
-csvpath = os.path.join('..', 'Resources', 'budget_data.csv')
-with open('csvpath' , 'r') as csvfile:
-
-#Create variable for each records to calculate the requested totals
-    total_months = []   #month count
-    total_net_profit = 0
-    total_net_losses = 0
-    change_prof_loss = []    #average_change= total net profit losses / total months
-    date_count = []
-    greatest_increase = 0  #date and amount
-    greatest_decrease = 0  #date and amount
-
+budget_data_csv = os.path.join('..', 'Resources', 'budget_data.csv')
 # CSV reader specifies delimiter and variable that holds contents
+with open('budget_data.csv', 'r') as csvfile:
     csvreader = csv.reader(csvfile, delimiter = ',')
     header = next(csvreader)
+#Create variables for each records to calculate the requested totals
+total_months = []   
+total_net_profit = 0
+total_net_losses = 0
+change_prof_loss = []    
+date_count = []
+greatest_increase = 0  
+greatest_decrease = 0  
+
 #Read each row of data after the header
-    for row in csvreader:
+for row in csvreader:
 #Calculate the total number of months included in the dataset
     total_months = total_months + 1
 
@@ -48,15 +47,14 @@ with open('csvpath' , 'r') as csvfile:
     print("Average Change: " + int(average_change))
     print("Greatest Increase In Profits: " + int(greatest_increase))
     print("Greatest Decrease In Profits: " + int(greatest_decrease))
-
 #Writting a outer file
-    output = analysis.txt
-    with open('analysis.txt' , 'w')
-        write("Financial Analysis" "\n")
-        write("------------------------") "\n")
-        write("Total Months: " + round(total_months) "\n")
-        write("Total: " + int(total_amount) "\n")
-        write("Average Change: " + int(average_change) "\n")
-        write("Greatest Increase In Profits: " + int(greatest_increase) "\n")
-        write("Greatest Decrease In Profits: " + int(greatest_decrease)) "\n")
-    close = analysis.txt
+output = analysis.txt
+with open(output,'w+') as newline:
+    write("Financial Analysis" + "\n")
+    write("------------------------" + "\n")
+    write("Total Months:" + round(total_months) + "\n")
+    write("Total: " + int(total_amount) + "\n")
+    write("Average Change:" + int(average_change) + "\n")
+    write("Greatest Increase In Profits:" + int(greatest_increase) + "\n")
+    write("Greatest Decrease In Profits:" + int(greatest_decrease)) 
+close = analysis.txt
